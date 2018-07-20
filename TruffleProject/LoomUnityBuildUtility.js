@@ -21,6 +21,19 @@ function mkdirSyncRecursive(targetDir) {
 
 function LoomUnityBuildUtility(options, contracts, unityAbiDirectory, loomBinDirectory) {
     if (typeof contracts == "string") contracts = [contracts];
+    if (!(contracts instanceof Array)) contracts = [];
+    if (options.searchContractsInDestinationDirectory) {
+        const buildDir = path.join(options.destination_directory, "contracts");
+        const files = fs.readdirSync(buildDir);
+        files.forEach(element => {
+            if (path.extname(element) == ".json") {
+                contracts.push(path.basename(element, ".json"));
+            }
+        });
+    }
+
+    // Make unique
+    contracts = [...new Set(contracts)];
 
     this.options = options;
     this.contracts = contracts;
