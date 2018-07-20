@@ -121,7 +121,7 @@ public class BlueprintContractClient : IDisposable {
             new SignedTxMiddleware(this.privateKey)
         });
 
-        Address contractAddr = await this.client.ResolveContractAddressAsync("BluePrint");
+        Address contractAddr = await this.client.ResolveContractAddressAsync("Blueprint");
         EvmContract evmContract = new EvmContract(this.client, contractAddr, this.address, this.abi);
 
         return evmContract;

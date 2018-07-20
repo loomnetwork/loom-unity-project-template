@@ -1,5 +1,5 @@
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
 function mkdirSyncRecursive(targetDir) {
     if (!fs.existsSync(targetDir)) {
@@ -20,8 +20,9 @@ function mkdirSyncRecursive(targetDir) {
 }
 
 function LoomUnityBuildUtility(options, contracts, unityAbiDirectory, loomBinDirectory) {
-    this.options = options;
     if (typeof contracts == "string") contracts = [contracts];
+
+    this.options = options;
     this.contracts = contracts;
     this.unityAbiDirectory = unityAbiDirectory;
     this.loomBinDirectory = loomBinDirectory;

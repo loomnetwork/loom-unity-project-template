@@ -3,8 +3,8 @@
         {
             "vm": "EVM",
             "format": "hex",
-            "name": "BluePrint",
-            "location": "contracts/BluePrint.bin"
+            "name": "Blueprint",
+            "location": "contracts/Blueprint.bin"
         }
     ]
 }

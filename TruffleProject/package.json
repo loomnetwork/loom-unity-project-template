@@ -1,0 +1,15 @@
+{
+  "name": "loom-unity-project-template",
+  "description": "Template of a Unity project that utilises Truffle for testing the contract, and Loom for running the DAppChain",
+  "scripts": {
+    "truffle": "truffle",
+    "deploy:reset": "truffle deploy --reset --network loom_dapp_chain",
+    "deploy": "truffle deploy --network loom_dapp_chain",
+    "test": "truffle test --network loom_dapp_chain"
+  },
+  "dependencies": {
+    "loom-js": "^1.14.0",
+    "loom-truffle-provider": "^0.4.0",
+    "truffle": "^4.1.13"
+  }
+}

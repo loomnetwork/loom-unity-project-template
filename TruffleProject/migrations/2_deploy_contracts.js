@@ -1,5 +1,5 @@
-var BluePrint = artifacts.require("./BluePrint.sol");
+var Blueprint = artifacts.require("./Blueprint.sol");
 
 module.exports = function(deployer) {
-    deployer.deploy(BluePrint);
+    deployer.deploy(Blueprint);
 };

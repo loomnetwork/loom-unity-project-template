@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 // A template contract that is just a string-to-string map.
-contract BluePrint {
+contract Blueprint {
     event ValueChanged(string key, string newValue);
     event ValueRemoved(string key);
 
