@@ -121,6 +121,9 @@ public class BlueprintContractClient : IDisposable {
             new SignedTxMiddleware(this.privateKey)
         });
 
+        // If 'truffle deploy' was used to deploy the contract,
+        // you will have to use the contract address directly
+        // instead of resolving it from contract name
         Address contractAddr = await this.client.ResolveContractAddressAsync("Blueprint");
         EvmContract evmContract = new EvmContract(this.client, contractAddr, this.address, this.abi);
 
@@ -131,6 +134,10 @@ public class BlueprintContractClient : IDisposable {
     /// This method receives raw EVM events from the DAppChain.
     /// Add decoding of your own events here.
     /// </summary>
+    /// <remarks>
+    /// Events are not dispatched immediately.
+    /// Instead, they are queued to allow dispatching them when it is appropriate.
+    /// </remarks>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void EventReceivedHandler(object sender, EvmChainEventArgs e) {
@@ -152,7 +159,6 @@ public class BlueprintContractClient : IDisposable {
 
     #region Event Data Transfer Objects
 
-    [FunctionOutput]
     private class ValueChangedEventData
     {
         [Parameter("string")]
@@ -162,7 +168,6 @@ public class BlueprintContractClient : IDisposable {
         public string Value { get; set; }
     }
 
-    [FunctionOutput]
     private class ValueRemovedEventData
     {
         [Parameter("string")]

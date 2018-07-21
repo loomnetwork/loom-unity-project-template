@@ -9,7 +9,7 @@ cd build
 
 # Download Loom binary if it is not present
 if [ ! -f ./loom ]; then
-    ../download-loom.sh 276
+    ../download-loom.sh 288
 fi
 
 if [ "$1" == "reset" ] && [ -d ./app.db ]; then
