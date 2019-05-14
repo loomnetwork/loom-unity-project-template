@@ -1,7 +1,8 @@
 
 # Deprecated Repository
 
-This repository is **deprecated and no longer maintained**. We suggest you head over to the [Loom Network SDK for Unity](https://github.com/loomnetwork/unity-sdk) repository. It contains the SDK code and a Unity 2017.4 project that provides examples.
+This repository is **deprecated and no longer maintained**. Head over to
+[this page](https://loomx.io/developers/docs/en/join-testnet.html) to find out how you can join the Loom PlasmaChain Testnet.
 
 # Overview
 
